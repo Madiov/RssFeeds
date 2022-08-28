@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "64137b1a-f875-458e-88f5-4fb9ba2bcc7f",
+		"name": "RSSFeeds",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateACC",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"string3\",\r\n  \"password\": \"string3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7002/User",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"string3\",\r\n  \"password\": \"string3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7002/User/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"User",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RSS/Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2NjE2ODk4NTksImV4cCI6MTY2MTY5MzQ1OSwiaWF0IjoxNjYxNjg5ODU5fQ.I3zHYtIoXJ309_B0LE5J6dj12Q_1RB6qUfk1-gpfx6Y",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"url\": \"https://www.farsnews.ir/rss\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7002/RSS/Register",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"RSS",
+						"Register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RSS/Feeds",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2NjE2ODk4NTksImV4cCI6MTY2MTY5MzQ1OSwiaWF0IjoxNjYxNjg5ODU5fQ.I3zHYtIoXJ309_B0LE5J6dj12Q_1RB6qUfk1-gpfx6Y",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7002/RSS/Feeds",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"RSS",
+						"Feeds"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2NjE1MzEwNzMsImV4cCI6MTY2MTUzNDY3MywiaWF0IjoxNjYxNTMxMDczfQ._nHxcZeVAVm5CBBJHbF9a2aKOBbOgYvprPACqPolyCg",
+							"disabled": true
+						},
+						{
+							"key": "a",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RSS/comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2NjE1MzIyMTEsImV4cCI6MTY2MTUzNTgxMSwiaWF0IjoxNjYxNTMyMjExfQ.7jIACW1Z0EVqjfIcasyASJofJNocBYVrhpMz9vatHTc",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"link\": \"https://news.un.org/feed/view/en/story/2022/08/1125192\",\r\n  \"comment\": \"FingerCrossed12\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7002/RSS/comment",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"RSS",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RSS/setread",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2NjE1MzIyMTEsImV4cCI6MTY2MTUzNTgxMSwiaWF0IjoxNjYxNTMyMjExfQ.7jIACW1Z0EVqjfIcasyASJofJNocBYVrhpMz9vatHTc",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"link\": \"https://news.un.org/feed/view/en/story/2022/08/1125162\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7002/RSS/setread",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"RSS",
+						"setread"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RSS/bookmark",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2NjE1MzIyMTEsImV4cCI6MTY2MTUzNTgxMSwiaWF0IjoxNjYxNTMyMjExfQ.7jIACW1Z0EVqjfIcasyASJofJNocBYVrhpMz9vatHTc",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"link\": \"https://news.un.org/feed/view/en/story/2022/08/1125162\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7002/RSS/bookmark",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7002",
+					"path": [
+						"RSS",
+						"bookmark"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

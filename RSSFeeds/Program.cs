@@ -21,8 +21,6 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddDbContext<RSSFeedContext>((opts) =>
                    opts.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection"), b => b.MigrationsAssembly("RSSFeeds")), ServiceLifetime.Singleton);
 builder.Services.AddControllers();
-
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAuthentication(item =>
@@ -43,6 +41,7 @@ builder.Services.AddAuthentication(item =>
         ValidateLifetime = true,
     };
 });
+builder.WebHost.UseUrls(Config.GetValue<string>("binding"));
 builder.Services.AddHostedService<Start>();
 var app = builder.Build();
 

@@ -112,7 +112,7 @@ namespace RSSFeeds.Services.Services
                 RSS.isRead = true;
                 unitOfWork.RSS.Update(RSS);
                 await unitOfWork.SaveAsync();
-                return new BaseResponseDTO { Message = "RSS Bookmarked Succesfully", Result = true };
+                return new BaseResponseDTO { Message = "RSS Marked As Read Succesfully", Result = true };
             }
             catch (Exception ex)
             {
