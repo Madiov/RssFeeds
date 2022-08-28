@@ -12,9 +12,9 @@ namespace RSSFeeds.Database.Repositories
         {
             return  AsQueryable().Where(u=>u.UserID==userId).ToList();
         }
-        public bool CkeckIfExist(string userId,string LinkId)
+        public bool CkeckIfExist(string userId,string Link)
         {
-            var Rss = AsQueryable().Where(r=>r.UserID==userId && r.LinkId==LinkId).FirstOrDefault();
+            var Rss = AsQueryable().Where(r=>r.UserID==userId && r.Link== Link).FirstOrDefault();
             if (Rss != null)
                 return true;
             return false;

@@ -55,7 +55,7 @@ namespace RSSFeeds.Migrations
                     b.Property<bool>("isBookmarked")
                         .HasColumnType("boolean");
 
-                    b.Property<bool>("isReaded")
+                    b.Property<bool>("isRead")
                         .HasColumnType("boolean");
 
                     b.HasKey("Id");

@@ -31,7 +31,7 @@ namespace RSSFeeds.Services.Services
                         Title = RSS.Title,
                         Desc = RSS.Desc,
                         Link = RSS.Link,
-                        LinkId = RSS.LinkId,//guid
+                        LinkId = RSS.LinkId,
                         Date = RSS.PublishDate,
                         isReaded = RSS.isRead,
                         isBookmarked = RSS.isBookmarked,

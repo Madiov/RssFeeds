@@ -17,7 +17,7 @@ namespace RSSFeeds.Services.Services
         public RSSUpdaterService(ILoggerManager logger, IUnitOfWork unitOfWork, IConfiguration configuration) : base(unitOfWork, logger, configuration)
         {
             retryPolicy = Policy.Handle<HttpRequestException>()
-                .WaitAndRetryAsync(retryCount: maxRetries,sleepDurationProvider: times =>TimeSpan.FromMilliseconds(times*100));
+                .WaitAndRetryAsync(retryCount: maxRetries,sleepDurationProvider: times =>TimeSpan.FromMilliseconds(times*300));
         }
         public void Start()
         {
@@ -91,11 +91,10 @@ namespace RSSFeeds.Services.Services
                 }
                 catch(Exception ex)
                 {
-                    //logger.LogError(ex.Message);
                     return null;
                 }
             });
-            int timeout = 1;
+            int timeout = 5000;
             if (await Task.WhenAny(task, Task.Delay(timeout)) == task)
             {
                 return await task;
@@ -115,7 +114,10 @@ namespace RSSFeeds.Services.Services
                     return await GetFeed(url);
                 });
             }
-            catch { return null; }
+            catch (Exception ex)
+            { 
+                return null; 
+            }
         }
     }
 }
