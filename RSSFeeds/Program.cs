@@ -25,6 +25,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.WebHost.UseUrls(Config.GetValue<string>("binding"));
 builder.Services.AddAuthentication(item =>
 {
     item.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -45,7 +46,6 @@ builder.Services.AddAuthentication(item =>
 });
 builder.Services.AddHostedService<Start>();
 var app = builder.Build();
-
 
 if (app.Environment.IsDevelopment())
 {
