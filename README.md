@@ -9,7 +9,7 @@ __Migration:__
 ```		
 	update-database
 ```				
-*			or run the following command in CMD  to activate database migration.
+* or run the following command in CMD  to activate database migration.
 ```			
 	dotnet ef database update
 ```	
