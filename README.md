@@ -26,3 +26,8 @@ I also included the release build intentionally in case you just want to try the
 ## Notes		
 The repository includes postman collection  "RSSFeeds.postman_collection.json" which provides
 some sample requests for testing and understanding the api mechanism.
+Port and Url For connecting to API :
+```
+https://localhost:7002
+```
+
