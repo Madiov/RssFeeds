@@ -1,0 +1,31 @@
+using Microsoft.EntityFrameworkCore;
+
+namespace RSSFeeds.Database
+{
+	public class PagedList<T>
+	{
+		private PagedList(List<T> items, int page, int pageSize, int totalCount)
+		{
+			this.items = items;
+			this.page = page;
+			this.pageSize = pageSize;
+			this.totalCount = totalCount;
+		}
+
+		public List<T> items { get; }
+		public int page { get; }
+		public int pageSize { get; }
+		public int totalCount { get; }
+		public bool HasNextPage => page *pageSize < totalCount;
+		public bool HasPreviousPage => page > 1;
+
+
+		public static async Task<PagedList<T>> CreateAsync(IQueryable<T> query ,int page , int pageSize)
+		{
+			var totalCount =await query.CountAsync();
+			var items =await query.Skip(page-1*pageSize).Take(pageSize).ToListAsync();
+			return new(items, page, pageSize, totalCount);
+		}
+
+	}
+}
