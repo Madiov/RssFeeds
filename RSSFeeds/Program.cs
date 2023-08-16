@@ -50,7 +50,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseExceptionHandler("/error");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
