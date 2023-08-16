@@ -8,17 +8,16 @@ namespace RSSFeeds.Controllers
 		[Route("/error")]
 		public IActionResult Error()
 		{
-			int statusCode = 500;
-			string message = "Unexpected Error ";
-			Exception? exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
+			var statusCode = 500;
 			
+			Exception? exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
+			var message = exception.Message;
 			switch (exception)
 			{
 				case IServiceException serviceException:
 					statusCode = (int)serviceException.StatusCode;
-					message = exception.Message;
+					message = serviceException.ErrorMessage;
 					break;
-
 			}
 			return Problem(statusCode : statusCode, title:message) ;
 		}
